@@ -6,7 +6,7 @@
 		<div>
 			<h1><a href="">Jungah's Blog</a></h1>
 		</div>
-
+<!--
 		<div>
 			<p>published: 2015.10.03, 12:14</p>
 			<h2><a href="">My First Post</a></h2>
@@ -18,5 +18,14 @@
 			<h2><a href="">My Second Post</a></h2>
 				<p>첫번째 포스트 - 블로그 글 출판 날짜와 클릭할 수 있는 블로그 제목!</p>
 			</div>
-	</body>
+	-->
+	{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaks }}</p>
+	</div>
+	{% endfor %}
+</body>
 	</html>
+
